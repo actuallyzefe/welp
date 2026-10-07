@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "indentation": { "spaces": 2 },
+  "lineLength": 100,
+  "maximumBlankLines": 1,
+  "respectsExistingLineBreaks": true,
+  "lineBreakBeforeEachArgument": false,
+  "rules": {
+    "AlwaysUseLowerCamelCase": true,
+    "NeverForceUnwrap": false,
+    "NeverUseForceTry": true,
+    "NoLeadingUnderscores": true,
+    "OrderedImports": true,
+    "UseLetInEveryBoundCaseVariable": true,
+    "ValidateDocumentationComments": false
+  }
+}

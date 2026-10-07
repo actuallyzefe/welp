@@ -1,0 +1,8 @@
+---
+description: Tests
+globs: Tests/**,ee/Tests/**
+alwaysApply: false
+---
+
+Follow [tests.md](mdc:.claude/rules/tests.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).

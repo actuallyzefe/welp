@@ -1,0 +1,8 @@
+---
+description: Domain and application modules
+globs: Sources/SharedKernel/**,Sources/SendGuard/**,Sources/GuardedChats/**,Sources/Preferences/**
+alwaysApply: false
+---
+
+Follow [domain.md](mdc:.claude/rules/domain.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).

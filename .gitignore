@@ -1,0 +1,9 @@
+.build/
+build/
+.swiftpm/
+*.xcodeproj
+xcuserdata/
+.DS_Store
+shots/
+CLAUDE.local.md
+.claude/settings.local.json

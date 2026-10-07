@@ -1,0 +1,8 @@
+---
+description: Docs and changelog
+globs: README.md,README.*.md,CHANGELOG.md,CONTRIBUTING.md,docs/**
+alwaysApply: false
+---
+
+Follow [docs.md](mdc:.claude/rules/docs.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).

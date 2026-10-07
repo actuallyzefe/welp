@@ -1,0 +1,62 @@
+name: Bug report
+description: Something does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please search [existing issues](https://github.com/actuallyzefe/welp/issues?q=is%3Aissue) first.
+        **Security problems:** do not report them here; see [SECURITY.md](https://github.com/actuallyzefe/welp/blob/main/SECURITY.md).
+  - type: dropdown
+    id: messenger
+    attributes:
+      label: Messenger
+      multiple: true
+      options:
+        - WhatsApp for Mac
+        - Slack
+        - Not messenger-specific
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Guard a chat with "İlk mesaj" mode
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: welp-version
+    attributes:
+      label: Welp version or commit
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "15.3.1"
+    validations:
+      required: true
+  - type: input
+    id: messenger-version
+    attributes:
+      label: WhatsApp / Slack version
+      placeholder: "WhatsApp 2.26.39.21, Slack 4.52.171"
+  - type: textarea
+    id: diagnose
+    attributes:
+      label: Output of `make diagnose`
+      description: |
+        Very helpful when Welp does not recognise a chat or button.
+        ⚠️ It contains the text currently in your message box: replace it before pasting.
+      render: text

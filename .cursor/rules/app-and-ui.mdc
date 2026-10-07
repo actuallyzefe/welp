@@ -1,0 +1,8 @@
+---
+description: App layer and UI
+globs: Sources/WelpApp/**,ee/Sources/WelpProEdition/**
+alwaysApply: false
+---
+
+Follow [app-and-ui.md](mdc:.claude/rules/app-and-ui.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).

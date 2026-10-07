@@ -1,0 +1,34 @@
+The Welp Commercial License (the "Commercial License")
+Copyright (c) 2026 Efe Karakanli
+
+With regard to the Welp Software in this "ee/" directory (the "Software"):
+
+This Software may only be used in production if you (and any entity that you
+represent) hold a valid Welp Pro license for the correct number of users and
+are in compliance with the terms under which that license was granted.
+
+Subject to the foregoing, you are free to read the source code, and to copy and
+modify the Software for development and testing purposes without a license.
+You may publish patches to the Software. The licensor retains all right, title
+and interest in and to all such modifications and patches, which may only be
+used in production with a valid Welp Pro license.
+
+You are not granted any other rights beyond what is expressly stated herein.
+Subject to the foregoing, it is forbidden to copy, merge, publish, distribute,
+sublicense, and/or sell the Software.
+
+This Commercial License applies only to the part of the Software that is in
+this "ee/" directory. The rest of the repository is licensed under the MIT
+license, as described in the "LICENSE" file at the repository root.
+
+For all third party components incorporated into the Software, those
+components are licensed under the original license provided by the owner of
+the applicable component.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

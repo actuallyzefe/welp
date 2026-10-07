@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build, lint and test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
+        with:
+          xcode-version: latest-stable  # Xcode 26: also builds the Liquid Glass look
+
+      - name: Toolchain
+        run: swift --version
+
+      - name: Lint
+        run: make lint
+
+      - name: Build
+        run: swift build -c release
+
+      - name: Test
+        run: swift test
+
+      # The open-source core must build and work without ee/ (docs/ARCHITECTURE.md).
+      - name: Core builds and passes its tests without ee/
+        env:
+          WELP_FOSS_ONLY: "1"
+        run: |
+          swift build -c release --product Welp
+          swift test
+
+      - name: String Catalog in sync with the code
+        run: make check-strings

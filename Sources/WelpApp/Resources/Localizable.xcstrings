@@ -1,0 +1,1397 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@: couldn’t tell which chat this message will go to.": {
+      "comment": "Confirmation prompt when the chat is unknown. The argument is WhatsApp or Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: mesajın hangi sohbete gideceği algılanamadı."
+          }
+        }
+      }
+    },
+    "%@: open a chat to protect it": {
+      "comment": "Menu bar menu. The argument is WhatsApp or Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: korumak için bir sohbet aç"
+          }
+        }
+      }
+    },
+    "%lld chats": {
+      "comment": "Settings sidebar: number of guarded chats.",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld chat"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld chats"
+                }
+              }
+            }
+          }
+        },
+        "tr": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld sohbet"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld sohbet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "About once a day Welp asks getwelp.io for a newer version and offers to install it. Nothing about you or your chats is sent.": {
+      "comment": "General setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp günde bir kez getwelp.io'ya yeni bir sürüm olup olmadığını sorar ve kurmayı önerir. Seninle ya da sohbetlerinle ilgili hiçbir şey gönderilmez."
+          }
+        }
+      }
+    },
+    "Accessibility permission granted": {
+      "comment": "General pane permission status.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişilebilirlik izni verildi"
+          }
+        }
+      }
+    },
+    "Accessibility permission required": {
+      "comment": "General pane permission status.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişilebilirlik izni gerekli"
+          }
+        }
+      }
+    },
+    "Accessibility permission required…": {
+      "comment": "Menu bar status line; opens System Settings.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişilebilirlik izni gerekli…"
+          }
+        }
+      }
+    },
+    "Acme Customer": {
+      "comment": "Made-up chat name shown in previews.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acme Müşteri"
+          }
+        }
+      }
+    },
+    "All": {
+      "comment": "Chats pane filter: guarded chats in every app.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümü"
+          }
+        }
+      }
+    },
+    "Allow it in System Settings so Welp can see your sends.": {
+      "comment": "General pane permission explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp'in gönderimleri görebilmesi için Sistem Ayarları'nda izin ver."
+          }
+        }
+      }
+    },
+    "Appearance": {
+      "comment": "Settings section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görünüm"
+          }
+        }
+      }
+    },
+    "Apps": {
+      "comment": "Accessibility label of the Chats pane's app filter.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulamalar"
+          }
+        }
+      }
+    },
+    "Are you sure?": {
+      "comment": "Title of the prompt shown before sending to a guarded chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emin misin?"
+          }
+        }
+      }
+    },
+    "Ask again after silence": {
+      "comment": "Behavior setting.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sessiz kalınca tekrar sor"
+          }
+        }
+      }
+    },
+    "Ask on every message": {
+      "comment": "Protection mode name.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her mesajda sor"
+          }
+        }
+      }
+    },
+    "Ask on first message": {
+      "comment": "Protection mode name.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk mesajda sor"
+          }
+        }
+      }
+    },
+    "Asks before every send. For very sensitive chats, like the board.": {
+      "comment": "Explanation of the “Ask on every message” mode.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her gönderimden önce onay ister. Yönetim kurulu gibi çok hassas sohbetler için."
+          }
+        }
+      }
+    },
+    "Asks before the first message after you enter the chat. Stays quiet while you remain there.": {
+      "comment": "Explanation of the “Ask on first message” mode.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sohbete girdikten sonraki ilk mesajda sorar. Orada kaldıkça bir daha sormaz."
+          }
+        }
+      }
+    },
+    "Attachment / media": {
+      "comment": "Confirmation prompt: shown instead of the text when sending only a file.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ek / medya gönderimi"
+          }
+        }
+      }
+    },
+    "Back": {
+      "comment": "Settings toolbar button: previous pane.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri"
+          }
+        }
+      }
+    },
+    "Behavior": {
+      "comment": "Settings section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Davranış"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "comment": "Confirmation prompt button; the default, so a reflexive Return cancels.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazgeç"
+          }
+        }
+      }
+    },
+    "Changes the color of the menu bar icon while you’re in a guarded chat.": {
+      "comment": "Appearance setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan bir sohbetteyken menü çubuğundaki simge rengini değiştirir."
+          }
+        }
+      }
+    },
+    "Chats": {
+      "comment": "Settings section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sohbetler"
+          }
+        }
+      }
+    },
+    "Check for Updates…": {
+      "comment": "Button and menu item that checks for a newer version of Welp.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri Denetle…"
+          }
+        }
+      }
+    },
+    "Check for updates automatically": {
+      "comment": "General setting.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri otomatik denetle"
+          }
+        }
+      }
+    },
+    "Check now": {
+      "comment": "General setting: check for a newer version right away.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi denetle"
+          }
+        }
+      }
+    },
+    "Close": {
+      "comment": "Window menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapat"
+          }
+        }
+      }
+    },
+    "Copy": {
+      "comment": "Edit menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopyala"
+          }
+        }
+      }
+    },
+    "Couldn’t read the guarded chats": {
+      "comment": "Error alert title at launch.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan sohbetler okunamadı"
+          }
+        }
+      }
+    },
+    "Couldn’t save the setting": {
+      "comment": "Error alert title.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayar kaydedilemedi"
+          }
+        }
+      }
+    },
+    "Couldn’t send the message. Please try again.": {
+      "comment": "Toast after a held message could not be sent.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj gönderilemedi. Lütfen tekrar dene."
+          }
+        }
+      }
+    },
+    "Couldn’t start protection": {
+      "comment": "Error alert title when input interception fails.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koruma başlatılamadı"
+          }
+        }
+      }
+    },
+    "Cut": {
+      "comment": "Edit menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kes"
+          }
+        }
+      }
+    },
+    "Default for new chats": {
+      "comment": "Behavior pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni sohbetler için varsayılan"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "comment": "Menu item that removes a guarded chat from Welp.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sil"
+          }
+        }
+      }
+    },
+    "Duration": {
+      "comment": "Behavior setting: silence before asking again.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süre"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "comment": "Main menu title.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Düzen"
+          }
+        }
+      }
+    },
+    "Forward": {
+      "comment": "Settings toolbar button: next pane.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İleri"
+          }
+        }
+      }
+    },
+    "Guarded chats": {
+      "comment": "Settings search keyword for the Chats pane.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan sohbetler"
+          }
+        }
+      }
+    },
+    "Hide Welp": {
+      "comment": "Main menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp'i Gizle"
+          }
+        }
+      }
+    },
+    "More": {
+      "comment": "Tooltip of the menu with more actions for a guarded chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer"
+          }
+        }
+      }
+    },
+    "No %@ chats protected yet.": {
+      "comment": "Chats pane, an app with no guarded chats. The argument is WhatsApp or Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz korunan %@ sohbeti yok."
+          }
+        }
+      }
+    },
+    "No results": {
+      "comment": "Settings sidebar search found nothing.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuç yok"
+          }
+        }
+      }
+    },
+    "Not protected": {
+      "comment": "Chats pane: a saved chat whose app isn't available in this plan.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunmuyor"
+          }
+        }
+      }
+    },
+    "Paste": {
+      "comment": "Edit menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yapıştır"
+          }
+        }
+      }
+    },
+    "Pause or resume protecting this chat": {
+      "comment": "Tooltip and accessibility label of a guarded chat's on/off switch.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu sohbetin korumasını duraklat veya sürdür"
+          }
+        }
+      }
+    },
+    "Paused": {
+      "comment": "Chats pane: a guarded chat that is switched off for now.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duraklatıldı"
+          }
+        }
+      }
+    },
+    "Protect “%@”": {
+      "comment": "Menu bar menu: guards a chat open right now. The argument is the chat name.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” sohbetini koru"
+          }
+        }
+      }
+    },
+    "Protection": {
+      "comment": "Accessibility label of a guarded chat's protection mode picker.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koruma"
+          }
+        }
+      }
+    },
+    "Redo": {
+      "comment": "Edit menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yinele"
+          }
+        }
+      }
+    },
+    "Resume": {
+      "comment": "Chats pane button that resumes protecting a paused chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürdür"
+          }
+        }
+      }
+    },
+    "Search settings…": {
+      "comment": "Placeholder of the search field in the settings sidebar.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlarda ara…"
+          }
+        }
+      }
+    },
+    "Select All": {
+      "comment": "Edit menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümünü Seç"
+          }
+        }
+      }
+    },
+    "Send to %@?": {
+      "comment": "Question in the prompt before sending to a guarded chat. The argument is the chat name.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sohbetine gönderilsin mi?"
+          }
+        }
+      }
+    },
+    "Soon": {
+      "comment": "Tag on a messenger that Welp doesn't support yet.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakında"
+          }
+        }
+      }
+    },
+    "The offer is attached, let me know what you think.": {
+      "comment": "Made-up message shown in screenshots of the prompts.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif ekte, ne düşündüğünü yazarsın."
+          }
+        }
+      }
+    },
+    "Turn the icon red": {
+      "comment": "Appearance setting: the menu bar icon turns red in a guarded chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simge kırmızıya dönsün"
+          }
+        }
+      }
+    },
+    "Unlock": {
+      "comment": "Chats pane button for an app that needs an upgrade to be protected.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilidi aç"
+          }
+        }
+      }
+    },
+    "Updates": {
+      "comment": "General pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler"
+          }
+        }
+      }
+    },
+    "Welp %@": {
+      "comment": "Current version under Check now. The argument is the version number.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp %@"
+          }
+        }
+      }
+    },
+    "Welp asks again after this much silence.": {
+      "comment": "Behavior setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu kadar sessizlikten sonra tekrar sorulur."
+          }
+        }
+      }
+    },
+    "Welp can see the send button in WhatsApp and Slack.": {
+      "comment": "General pane permission explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp, WhatsApp ve Slack'te gönder tuşunu görebiliyor."
+          }
+        }
+      }
+    },
+    "Welp closes and opens again in the new language. Protection pauses for a moment.": {
+      "comment": "Explanation of the restart needed for a new language.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp kapanır ve yeni dilde yeniden açılır. Koruma bir anlığına durur."
+          }
+        }
+      }
+    },
+    "Welp doesn’t connect to the internet. What you write is never saved, logged or sent anywhere; Welp only looks at a message at the moment you send it, to protect it.": {
+      "comment": "General pane privacy note.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp internete bağlanmaz. Yazdıkların hiçbir zaman saklanmaz, kaydedilmez, hiçbir yere gönderilmez; Welp bir mesaja yalnızca gönderdiğin anda, onu korumak için bakar."
+          }
+        }
+      }
+    },
+    "Welp only connects to the internet to check for updates, if you allow it. What you write is never saved, logged or sent anywhere; Welp only looks at a message at the moment you send it, to protect it.": {
+      "comment": "General pane privacy note, in builds that can check for updates.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp internete yalnızca, izin verirsen, güncellemeleri denetlemek için bağlanır. Yazdıkların hiçbir zaman saklanmaz, kaydedilmez, hiçbir yere gönderilmez; Welp bir mesaja yalnızca gönderdiğin anda, onu korumak için bakar."
+          }
+        }
+      }
+    },
+    "Welp protects the chat that’s open in WhatsApp or Slack. Open a chat there, then protect it here.": {
+      "comment": "Chats pane: how protecting works, under the open chats.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp, WhatsApp veya Slack'te açık olan sohbeti korur. Sohbeti orada aç, sonra buradan koru."
+          }
+        }
+      }
+    },
+    "Welp quietly starts in the menu bar.": {
+      "comment": "General setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp menü çubuğunda sessizce çalışmaya başlar."
+          }
+        }
+      }
+    },
+    "Welp: guarded chat": {
+      "comment": "VoiceOver label of the menu bar icon while in a guarded chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp: korunan sohbet"
+          }
+        }
+      }
+    },
+    "Every message": {
+      "comment": "Short protection mode name, in a compact picker.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her mesaj"
+          }
+        }
+      }
+    },
+    "Everything stays on this Mac": {
+      "comment": "General pane privacy note title.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her şey bu Mac'te kalır"
+          }
+        }
+      }
+    },
+    "First message": {
+      "comment": "Short protection mode name, in a compact picker.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk mesaj"
+          }
+        }
+      }
+    },
+    "General": {
+      "comment": "Settings section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel"
+          }
+        }
+      }
+    },
+    "Guarded chat": {
+      "comment": "Caption in the menu bar icon preview.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan sohbet"
+          }
+        }
+      }
+    },
+    "Guarded chats · %lld": {
+      "comment": "Chats pane section with the number of guarded chats.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan sohbetler · %lld"
+          }
+        }
+      }
+    },
+    "Hold time": {
+      "comment": "Behavior setting for the Undo mode.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekleme süresi"
+          }
+        }
+      }
+    },
+    "If you don’t send anything for a while, asks again on the next message.": {
+      "comment": "Behavior setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sohbette bir süre mesaj atmazsan, sonraki mesajda yeniden sorar."
+          }
+        }
+      }
+    },
+    "Language": {
+      "comment": "General pane section.\nGeneral setting: the app's interface language.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil"
+          }
+        }
+      }
+    },
+    "Menu bar": {
+      "comment": "Appearance pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü çubuğu"
+          }
+        }
+      }
+    },
+    "Message box badge": {
+      "comment": "Appearance pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj kutusu rozeti"
+          }
+        }
+      }
+    },
+    "Message not sent: you left the chat or edited the message. It’s still in the message box of %@.": {
+      "comment": "Toast after a held message was dropped for safety. The argument is a chat name, or WhatsApp / Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj gönderilmedi: sohbetten çıktın ya da mesajı değiştirdin. Mesaj hâlâ %@ sohbetinin yazma kutusunda."
+          }
+        }
+      }
+    },
+    "Never asks. Holds the message for a few seconds with a chance to “Undo”. Keeps you in the flow.": {
+      "comment": "Explanation of the “Undo” mode.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiç sormaz. Mesajı birkaç saniye bekletir, “Geri al” şansı verir. Akışı bozmaz."
+          }
+        }
+      }
+    },
+    "No guarded chats yet": {
+      "comment": "Chats pane empty state title.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz korunan sohbet yok"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "comment": "Button that opens System Settings › Accessibility.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarları aç"
+          }
+        }
+      }
+    },
+    "Open WhatsApp or Slack; the open chat shows up here.": {
+      "comment": "Chats pane, when neither messenger is running.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WhatsApp ya da Slack'i aç; açık sohbet burada görünür."
+          }
+        }
+      }
+    },
+    "Open a chat in WhatsApp or Slack; it shows up here.": {
+      "comment": "Chats pane, when no chat is open.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WhatsApp ya da Slack'te bir sohbet aç; burada görünür."
+          }
+        }
+      }
+    },
+    "Open at login": {
+      "comment": "General setting.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac açılınca başlat"
+          }
+        }
+      }
+    },
+    "Open right now": {
+      "comment": "Chats pane section: chats currently open in WhatsApp or Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şu an açık"
+          }
+        }
+      }
+    },
+    "Permission": {
+      "comment": "General pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "comment": "General pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik"
+          }
+        }
+      }
+    },
+    "Protect": {
+      "comment": "Chats pane button that guards an open chat.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koru"
+          }
+        }
+      }
+    },
+    "Protected": {
+      "comment": "Chats pane: the open chat is already guarded.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunuyor"
+          }
+        }
+      }
+    },
+    "Protection couldn’t start": {
+      "comment": "Menu bar status line.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koruma başlatılamadı"
+          }
+        }
+      }
+    },
+    "Protection off": {
+      "comment": "Settings sidebar status.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koruma kapalı"
+          }
+        }
+      }
+    },
+    "Protection on": {
+      "comment": "Settings sidebar status.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koruma açık"
+          }
+        }
+      }
+    },
+    "Protection on · %lld chats": {
+      "comment": "Menu bar status line. The argument is the number of guarded chats.",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Protection on · %lld chat"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Protection on · %lld chats"
+                }
+              }
+            }
+          }
+        },
+        "tr": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Koruma açık · %lld sohbet"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Koruma açık · %lld sohbet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Quit Welp": {
+      "comment": "Menu bar menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp'ten Çık"
+          }
+        }
+      }
+    },
+    "Recommended": {
+      "comment": "Tag on the default protection mode.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önerilen"
+          }
+        }
+      }
+    },
+    "Regular chat": {
+      "comment": "Caption in the menu bar icon preview.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal sohbet"
+          }
+        }
+      }
+    },
+    "Restart Welp": {
+      "comment": "Button that quits and reopens the app.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp'i yeniden başlat"
+          }
+        }
+      }
+    },
+    "Restart to apply": {
+      "comment": "Shown after choosing another language.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulamak için yeniden başlat"
+          }
+        }
+      }
+    },
+    "Return and send": {
+      "comment": "Notice button: opens the chat the held message was written in and sends it there.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dön ve gönder"
+          }
+        }
+      }
+    },
+    "Send": {
+      "comment": "Confirmation prompt button.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönder"
+          }
+        }
+      }
+    },
+    "Send now": {
+      "comment": "Undo toast button; sends the held message without waiting.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi gönder"
+          }
+        }
+      }
+    },
+    "Sending to %@…": {
+      "comment": "Undo toast. The argument is a chat name, or WhatsApp / Slack.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sohbetine gidiyor…"
+          }
+        }
+      }
+    },
+    "Settings…": {
+      "comment": "Menu bar menu item.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar…"
+          }
+        }
+      }
+    },
+    "Show the badge": {
+      "comment": "Appearance setting.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rozeti göster"
+          }
+        }
+      }
+    },
+    "Sits above the message box while you’re in a guarded chat. Doesn’t block clicks.": {
+      "comment": "Appearance setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korunan sohbetteyken mesaj kutusunun üstünde durur. Tıklamaları engellemez."
+          }
+        }
+      }
+    },
+    "Startup": {
+      "comment": "General pane section.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlangıç"
+          }
+        }
+      }
+    },
+    "System Language": {
+      "comment": "Language picker option: use the Mac's language.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem Dili"
+          }
+        }
+      }
+    },
+    "The language of Welp’s menus and windows. “System Language” follows your Mac.": {
+      "comment": "General setting explanation. “System Language” is the first option of the picker.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welp'in menü ve pencerelerinin dili. “Sistem Dili” Mac'ini izler."
+          }
+        }
+      }
+    },
+    "The message is held this long; you can press “Undo” in the meantime.": {
+      "comment": "Behavior setting explanation.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj bu kadar bekletilir; bu sürede “Geri al”a basabilirsin."
+          }
+        }
+      }
+    },
+    "This message will go to a guarded chat:\n%@": {
+      "comment": "Confirmation prompt. The argument is the chat, e.g. “Slack › Acme › general”.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu mesaj korunan sohbete gidecek:\n%@"
+          }
+        }
+      }
+    },
+    "Type a message": {
+      "comment": "Placeholder in the preview of a messenger’s message box.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir mesaj yaz"
+          }
+        }
+      }
+    },
+    "Undo": {
+      "comment": "Edit menu item.\nProtection mode name: no prompt, the message is held with an Undo notice.\nShort protection mode name, in a compact picker.\nUndo toast button; stops the held message.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri al"
+          }
+        }
+      }
+    },
+    "WhatsApp or Slack isn’t open": {
+      "comment": "Menu bar menu, when neither messenger is running.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WhatsApp veya Slack açık değil"
+          }
+        }
+      }
+    },
+    "Window": {
+      "comment": "Main menu title.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencere"
+          }
+        }
+      }
+    },
+    "You can change each chat’s mode separately under “Chats”.": {
+      "comment": "Behavior pane hint. “Chats” is the settings section name.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her sohbetin modunu “Sohbetler” bölümünden ayrıca değiştirebilirsin."
+          }
+        }
+      }
+    },
+    "board": {
+      "comment": "Made-up Slack channel name for screenshots; lowercase, no spaces.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yonetim"
+          }
+        }
+      }
+    },
+    "general": {
+      "comment": "Made-up Slack channel name for screenshots; lowercase, no spaces.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "genel"
+          }
+        }
+      }
+    },
+    "sales": {
+      "comment": "Made-up Slack channel name for screenshots; lowercase, no spaces.",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "satis"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

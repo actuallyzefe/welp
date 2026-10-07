@@ -1,0 +1,8 @@
+---
+description: Open core boundary
+globs: ee/**,Package.swift,Makefile,Sources/WelpApp/Edition.swift,Sources/WelpApp/AppDelegate.swift
+alwaysApply: false
+---
+
+Follow [open-core.md](mdc:.claude/rules/open-core.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+*.png binary
+*.icns binary
+
+# Keep generated and vendored files out of language stats and diffs.
+Package.resolved linguist-generated=true

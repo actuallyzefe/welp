@@ -1,0 +1,8 @@
+---
+description: Messenger adapters and input interception
+globs: Sources/AccessibilitySupport/**,Sources/WhatsAppAccessibility/**,Sources/InputInterception/**,Sources/WelpApp/ConversationMonitor.swift,Sources/WelpApp/MessengerScreen.swift,ee/Sources/SlackAccessibility/**
+alwaysApply: false
+---
+
+Follow [messenger-adapters.md](mdc:.claude/rules/messenger-adapters.md) (shared with Claude Code).
+Project-wide rules: [AGENTS.md](mdc:AGENTS.md).
