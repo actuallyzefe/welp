@@ -50,7 +50,7 @@ struct GeneralPane: View {
               bundle: .localization, comment: "General pane privacy note.")
             : String(
               localized:
-                "Welp only connects to the internet to check for updates, if you allow it. What you write is never saved, logged or sent anywhere; Welp only looks at a message at the moment you send it, to protect it.",
+                "Welp only connects to the internet to check for updates, if you allow it, and, with Welp Pro, to confirm your subscription about once a week by sending only your license key. What you write is never saved, logged or sent anywhere; Welp only looks at a message at the moment you send it, to protect it.",
               bundle: .localization,
               comment: "General pane privacy note, in builds that can check for updates."),
           symbol: "lock")

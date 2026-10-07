@@ -1,292 +1,292 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Activate": {
-      "comment": "Button that activates the license key typed next to it.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Etkinleştir"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Activate" : {
+      "comment" : "Button that activates the license key typed next to it.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkinleştir"
           }
         }
       }
     },
-    "Cancel": {
-      "comment": "Alert button; keeps the license.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vazgeç"
+    "Cancel" : {
+      "comment" : "Alert button; keeps the license.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vazgeç"
           }
         }
       }
     },
-    "Checking your subscription…": {
-      "comment": "General pane, while Welp checks the Pro subscription with getwelp.io.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aboneliğin kontrol ediliyor…"
+    "Checking your subscription…" : {
+      "comment" : "General pane, while Welp checks the Pro subscription with getwelp.io.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aboneliğin kontrol ediliyor…"
           }
         }
       }
     },
-    "Enter License Key…": {
-      "comment": "Alert button that opens the license settings.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lisans anahtarı gir…"
+    "Enter License Key…" : {
+      "comment" : "Alert button that opens the license settings.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisans anahtarı gir…"
           }
         }
       }
     },
-    "Get Welp Pro": {
-      "comment": "Button that opens the Welp Pro checkout on the website.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp Pro'yu al"
+    "Get Welp Pro" : {
+      "comment" : "Button that opens the Welp Pro checkout on the website.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp Pro'yu al"
           }
         }
       }
     },
-    "License key": {
-      "comment": "Placeholder of the license key field.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lisans anahtarı"
+    "License key" : {
+      "comment" : "Placeholder of the license key field.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisans anahtarı"
           }
         }
       }
     },
-    "Licensed to %@. WhatsApp and Slack are protected.": {
-      "comment": "General pane, Pro plan. The argument is an email.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ adına lisanslı. WhatsApp ve Slack korunuyor."
+    "Licensed to %@. WhatsApp and Slack are protected." : {
+      "comment" : "General pane, Pro plan. The argument is an email.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ adına lisanslı. WhatsApp ve Slack korunuyor."
           }
         }
       }
     },
-    "Not Now": {
-      "comment": "Alert button.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Şimdi değil"
+    "Not Now" : {
+      "comment" : "Alert button.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi değil"
           }
         }
       }
     },
-    "Plan": {
-      "comment": "General pane section: Welp Free or Welp Pro.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plan"
+    "Plan" : {
+      "comment" : "General pane section: Welp Free or Welp Pro.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plan"
           }
         }
       }
     },
-    "Protecting %@ chats is part of Welp Pro": {
-      "comment": "Alert title. The argument is an app name, e.g. Slack.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ sohbetlerini korumak Welp Pro ile gelir"
+    "Protecting %@ chats is part of Welp Pro" : {
+      "comment" : "Alert title. The argument is an app name, e.g. Slack.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ sohbetlerini korumak Welp Pro ile gelir"
           }
         }
       }
     },
-    "Protects any number of WhatsApp chats. Welp Pro adds Slack, with Microsoft Teams and more on the way, for $9.99 a year.": {
-      "comment": "General pane, free plan explanation.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "İstediğin kadar WhatsApp sohbetini korur. Welp Pro, yıllık 9.99 $ ile Slack'i ekler; Microsoft Teams ve daha fazlası yolda."
+    "Protects any number of WhatsApp chats. Welp Pro adds Slack, with Microsoft Teams and more on the way, for $9.99 a year." : {
+      "comment" : "General pane, free plan explanation.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İstediğin kadar WhatsApp sohbetini korur. Welp Pro, yıllık 9.99 $ ile Slack'i ekler; Microsoft Teams ve daha fazlası yolda."
           }
         }
       }
     },
-    "Remove License": {
-      "comment": "Button that removes the license key from this Mac.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lisansı kaldır"
+    "Remove License" : {
+      "comment" : "Button that removes the license key from this Mac.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisansı kaldır"
           }
         }
       }
     },
-    "Remove the Welp Pro license from this Mac?": {
-      "comment": "Confirmation title before removing the license key.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp Pro lisansı bu Mac'ten kaldırılsın mı?"
+    "Remove the Welp Pro license from this Mac?" : {
+      "comment" : "Confirmation title before removing the license key.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp Pro lisansı bu Mac'ten kaldırılsın mı?"
           }
         }
       }
     },
-    "Renew": {
-      "comment": "Button that opens the Welp Pro page to subscribe again.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yenile"
+    "Renew" : {
+      "comment" : "Button that opens the Welp Pro page to subscribe again.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenile"
           }
         }
       }
     },
-    "That doesn’t look like a Welp license key. Copy the whole key from the email.": {
-      "comment": "License key error.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bu bir Welp lisans anahtarına benzemiyor. Anahtarın tamamını e-postadan kopyala."
+    "That doesn’t look like a Welp license key. Copy the whole key from the email." : {
+      "comment" : "License key error.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu bir Welp lisans anahtarına benzemiyor. Anahtarın tamamını e-postadan kopyala."
           }
         }
       }
     },
-    "The key is in your subscription email. About once a week, Welp sends it to getwelp.io, and nothing else, to check that your subscription is active.": {
-      "comment": "Explanation under the plan section.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anahtar, abonelik e-postanda. Welp aboneliğinin aktif olduğunu doğrulamak için haftada bir yalnızca bu anahtarı getwelp.io'ya gönderir, başka hiçbir şeyi değil."
+    "The key is in your subscription email. About once a week, Welp sends it to getwelp.io, and nothing else, to check that your subscription is active." : {
+      "comment" : "Explanation under the plan section.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anahtar, abonelik e-postanda. Welp aboneliğinin aktif olduğunu doğrulamak için haftada bir yalnızca bu anahtarı getwelp.io'ya gönderir, başka hiçbir şeyi değil."
           }
         }
       }
     },
-    "This license key doesn’t work with this version of Welp. Get your current key at getwelp.io/pro.": {
-      "comment": "License key error.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bu lisans anahtarı Welp'in bu sürümüyle çalışmıyor. Güncel anahtarını getwelp.io/pro adresinden al."
+    "This license key doesn’t work with this version of Welp. Get your current key at getwelp.io/pro." : {
+      "comment" : "License key error.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu lisans anahtarı Welp'in bu sürümüyle çalışmıyor. Güncel anahtarını getwelp.io/pro adresinden al."
           }
         }
       }
     },
-    "This license key isn’t valid. Check that it was copied completely.": {
-      "comment": "License key error.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bu lisans anahtarı geçerli değil. Tamamen kopyalandığından emin ol."
+    "This license key isn’t valid. Check that it was copied completely." : {
+      "comment" : "License key error.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu lisans anahtarı geçerli değil. Tamamen kopyalandığından emin ol."
           }
         }
       }
     },
-    "Try Again": {
-      "comment": "Button that checks the Welp Pro subscription with getwelp.io again.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tekrar dene"
+    "Try Again" : {
+      "comment" : "Button that checks the Welp Pro subscription with getwelp.io again.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekrar dene"
           }
         }
       }
     },
-    "Welp Free": {
-      "comment": "General pane plan name.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp Free"
+    "Welp Free" : {
+      "comment" : "General pane plan name.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp Free"
           }
         }
       }
     },
-    "Welp Pro": {
-      "comment": "General pane plan name.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp Pro"
+    "Welp Pro" : {
+      "comment" : "General pane plan name.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp Pro"
           }
         }
       }
     },
-    "Welp couldn’t reach getwelp.io to check your subscription. Slack chats are protected again once it can; WhatsApp still is.": {
-      "comment": "General pane, Pro subscription can't be checked (offline).",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp aboneliğini kontrol etmek için getwelp.io'ya ulaşamadı. Ulaşabildiğinde Slack sohbetlerin yeniden korunur; WhatsApp korunmaya devam ediyor."
+    "Welp couldn’t reach getwelp.io to check your subscription. Slack chats are protected again once it can; WhatsApp still is." : {
+      "comment" : "General pane, Pro subscription can't be checked (offline).",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp aboneliğini kontrol etmek için getwelp.io'ya ulaşamadı. Ulaşabildiğinde Slack sohbetlerin yeniden korunur; WhatsApp korunmaya devam ediyor."
           }
         }
       }
     },
-    "WhatsApp stays free. Get Welp Pro to protect Slack chats too.": {
-      "comment": "Alert text when a Pro app's chat is protected without a license.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "WhatsApp ücretsiz kalır. Slack sohbetlerini de korumak için Welp Pro'yu al."
+    "WhatsApp stays free. Get Welp Pro to protect Slack chats too." : {
+      "comment" : "Alert text when a Pro app's chat is protected without a license.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatsApp ücretsiz kalır. Slack sohbetlerini de korumak için Welp Pro'yu al."
           }
         }
       }
     },
-    "Your Slack chats stay in the list but won’t be protected until you enter a license key again. WhatsApp stays protected.": {
-      "comment": "Confirmation text before removing the license key.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slack sohbetlerin listede kalır ama yeniden bir lisans anahtarı girene kadar korunmaz. WhatsApp korunmaya devam eder."
+    "Your Slack chats stay in the list but won’t be protected until you enter a license key again. WhatsApp stays protected." : {
+      "comment" : "Confirmation text before removing the license key.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slack sohbetlerin listede kalır ama yeniden bir lisans anahtarı girene kadar korunmaz. WhatsApp korunmaya devam eder."
           }
         }
       }
     },
-    "Your Welp Pro subscription has ended, so Slack chats aren’t protected. WhatsApp still is.": {
-      "comment": "General pane, Pro plan whose subscription has ended.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welp Pro aboneliğin sona erdi, bu yüzden Slack sohbetlerin korunmuyor. WhatsApp korunmaya devam ediyor."
+    "Your Welp Pro subscription has ended, so Slack chats aren’t protected. WhatsApp still is." : {
+      "comment" : "General pane, Pro plan whose subscription has ended.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp Pro aboneliğin sona erdi, bu yüzden Slack sohbetlerin korunmuyor. WhatsApp korunmaya devam ediyor."
           }
         }
       }
     },
-    "Your subscription needs to be checked with getwelp.io.": {
-      "comment": "General pane, Pro subscription not checked yet.",
-      "localizations": {
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aboneliğinin getwelp.io ile kontrol edilmesi gerekiyor."
+    "Your subscription needs to be checked with getwelp.io." : {
+      "comment" : "General pane, Pro subscription not checked yet.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aboneliğinin getwelp.io ile kontrol edilmesi gerekiyor."
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

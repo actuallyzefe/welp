@@ -151,8 +151,19 @@ public final class WhatsAppScreen: SendTargetScreen {
   }
 
   private func chat(in window: AXElement) -> ChatID? {
-    ChatName(window.firstDescendant { $0.identifier == Ids.chatTitle }?.label)
+    let title = window.firstDescendant { $0.identifier == Ids.chatTitle }
+    return ChatName((title ?? mediaRecipient(in: window))?.label)
       .map { ChatID(messenger: messenger, name: $0) }
+  }
+
+  /// The media preview's recipient, when it has exactly one: with several, no single chat is
+  /// the target, so the send is treated as going to an unknown chat.
+  private func mediaRecipient(in window: AXElement) -> AXElement? {
+    guard let recipient = window.firstDescendant(where: { $0.identifier == Ids.mediaRecipient }),
+      let recipients = recipient.parent?.children.filter({ $0.identifier == Ids.mediaRecipient }),
+      recipients.count == 1
+    else { return nil }
+    return recipient
   }
 
   private func composer(in window: AXElement) -> AXElement? {
@@ -169,7 +180,9 @@ public final class WhatsAppScreen: SendTargetScreen {
   }
 
   private func isSendButton(_ element: AXElement) -> Bool {
-    if element.identifier == Ids.sendButton { return true }
+    if element.identifier == Ids.sendButton || element.identifier == Ids.mediaSendButton {
+      return true
+    }
     guard element.role == kAXButtonRole, let label = element.label else { return false }
     let normalized = TextNormalizer.normalize(label).lowercased(with: Locale(identifier: "tr_TR"))
     return Ids.sendButtonLabels.contains(normalized)
