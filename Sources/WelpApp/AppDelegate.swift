@@ -94,8 +94,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
       openSettings: { settingsWindow.show() },
       requestAccess: { messenger in
         edition.requestAccess(to: messenger, openPlan: { settingsWindow.show(pane: .general) })
-      },
-      updater: edition.updater
+      }
     )
     self.statusMenu = statusMenu
 

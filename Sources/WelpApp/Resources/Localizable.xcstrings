@@ -867,47 +867,6 @@
         }
       }
     },
-    "Protection on · %lld chats" : {
-      "comment" : "Menu bar status line. The argument is the number of guarded chats.",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Protection on · %lld chat"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Protection on · %lld chats"
-                }
-              }
-            }
-          }
-        },
-        "tr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Koruma açık · %lld sohbet"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Koruma açık · %lld sohbet"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "Quit Welp" : {
       "comment" : "Menu bar menu item.",
       "localizations" : {

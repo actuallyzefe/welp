@@ -17,7 +17,6 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
   private let isProtectionActive: @MainActor () -> Bool
   private let openSettings: @MainActor () -> Void
   private let requestAccess: @MainActor (Messenger) -> Void
-  private let updater: (any AppUpdater)?
 
   init(
     guardedChats: GuardedChatsService,
@@ -26,8 +25,7 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
     permission: AccessibilityPermission,
     isProtectionActive: @escaping @MainActor () -> Bool,
     openSettings: @escaping @MainActor () -> Void,
-    requestAccess: @escaping @MainActor (Messenger) -> Void,
-    updater: (any AppUpdater)?
+    requestAccess: @escaping @MainActor (Messenger) -> Void
   ) {
     self.guardedChats = guardedChats
     self.preferences = preferences
@@ -36,7 +34,6 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
     self.isProtectionActive = isProtectionActive
     self.openSettings = openSettings
     self.requestAccess = requestAccess
-    self.updater = updater
     super.init()
 
     showShield(alerting: false)
@@ -78,24 +75,18 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
 
   func menuNeedsUpdate(_ menu: NSMenu) {
     menu.removeAllItems()
-    menu.addItem(statusLine())
-    // What is protected, with a switch for each; then what could be protected right now.
-    for section in [guardedSection(), openChatsSection()] where !section.isEmpty {
-      menu.addItem(.separator())
+    // A problem, if any; what is protected, with a switch for each; then what could be
+    // protected right now.
+    let sections = [statusLine().map { [$0] } ?? [], guardedSection(), openChatsSection()]
+    for section in sections where !section.isEmpty {
       section.forEach(menu.addItem)
+      menu.addItem(.separator())
     }
-    menu.addItem(.separator())
     let settings = item(
       String(localized: "Settings…", bundle: .localization, comment: "Menu bar menu item."),
       action: #selector(showSettings), key: ",")
     settings.setMenuImage(Self.symbol("gearshape"))
     menu.addItem(settings)
-    if updater != nil {
-      let updates = item(.checkForUpdates, action: #selector(checkForUpdates))
-      updates.setMenuImage(Self.symbol("arrow.triangle.2.circlepath"))
-      updates.isEnabled = updater?.canCheckForUpdates ?? false
-      menu.addItem(updates)
-    }
     menu.addItem(
       item(
         String(localized: "Quit Welp", bundle: .localization, comment: "Menu bar menu item."),
@@ -104,7 +95,9 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
 
   // MARK: Items
 
-  private func statusLine() -> NSMenuItem {
+  /// A line only when something needs attention; while protection runs, the menu starts
+  /// with the guarded chats.
+  private func statusLine() -> NSMenuItem? {
     if !permission.isGranted {
       let line = item(
         String(
@@ -129,11 +122,7 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
           comment: "Chats pane empty state title."))
       line.setMenuImage(Self.welpMenuMark)
     } else {
-      line = disabled(
-        String(
-          localized: "Protection on · \(count) chats", bundle: .localization,
-          comment: "Menu bar status line. The argument is the number of guarded chats."))
-      line.setMenuImage(Self.welpMenuMark)
+      return nil
     }
     return line
   }
@@ -226,10 +215,6 @@ final class StatusMenuController: NSObject, NSMenuDelegate {
     } catch {
       ErrorPresenter.show(title: .settingNotSaved, error: error)
     }
-  }
-
-  @objc private func checkForUpdates() {
-    updater?.checkForUpdates()
   }
 
   @objc private func showSettings() {
