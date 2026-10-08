@@ -6,10 +6,12 @@ import SwiftUI
 ///
 /// - `ink`: adaptive neutral for text and surfaces (used at different opacities)
 /// - `signal`: the system red, for guarded chats and warnings
+/// - `caution`: the system orange, for something to set up before Welp can work
 /// - `brand`: Welp's red, only for the main calls to action
 public enum Theme {
   public static let ink = Color.primary
   public static let signal = Color(nsColor: signalNSColor)
+  public static let caution = Color(nsColor: .systemOrange)
   /// Welp's own red, from the app icon: the color of the main calls to action.
   public static let brand = Color(.sRGB, red: 0.796, green: 0.216, blue: 0.169)
 

@@ -6,10 +6,19 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- A notice at the bottom of the settings sidebar while the Accessibility permission is
+  missing, with a button to System Settings: Welp can't protect anything without it.
+
 ### Changed
 
 - The DMG opens on an install window: Welp next to the Applications folder, with an arrow
   to drag it across.
+
+### Fixed
+
+- The badge above the message box no longer cuts the mode short ("First mess…").
 
 ## [1.0.0] - 2026-10-08
 

@@ -8,9 +8,10 @@ paths:
 
 - `WelpApp` is the composition root: it wires adapters to ports and turns domain values
   into text. Keep rules out of it; they belong in `SendGuard` or `GuardedChats`.
-- Colors: only `Theme.ink`, `Theme.signal` (guarded, warnings) and `Theme.brand` (main calls
-  to action), plus the derived tokens in `Theme.swift`. Prefer native controls, which bring
-  their own colors. No hard-coded colors in views.
+- Colors: only `Theme.ink`, `Theme.signal` (guarded, warnings), `Theme.caution` (setup still
+  needed, like a missing permission) and `Theme.brand` (main calls to action), plus the
+  derived tokens in `Theme.swift`. Prefer native controls, which bring their own colors. No
+  hard-coded colors in views.
 - Liquid Glass via `glassSurface(in:)`, which falls back on macOS 14 and 15. Guard newer
   APIs with `#available`.
 - In the *Are you sure?* prompt, `Return` sends (the prompt itself is the pause) and

@@ -108,7 +108,13 @@ private struct Sidebar: View {
       }
     }
     .safeAreaInset(edge: .bottom) {
-      ProtectionStatus(model: model).padding(12)
+      VStack(spacing: 8) {
+        if !model.isPermissionGranted {
+          PermissionNotice(model: model)
+        }
+        ProtectionStatus(model: model)
+      }
+      .padding(12)
     }
   }
 }
@@ -203,6 +209,51 @@ extension SettingsModel.Pane {
           localized: "Language", bundle: .localization, comment: "General pane section."),
       ]
     }
+  }
+}
+
+/// Shown above the protection status until Accessibility is allowed: without it Welp can't
+/// see or hold a single message, so it stays in view whichever pane is open.
+private struct PermissionNotice: View {
+  let model: SettingsModel
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 8) {
+      HStack(alignment: .firstTextBaseline, spacing: 6) {
+        Image(systemName: "exclamationmark.triangle.fill")
+          .font(.system(size: 11))
+          .foregroundStyle(Theme.caution)
+        VStack(alignment: .leading, spacing: 2) {
+          Text(
+            String(
+              localized: "Accessibility permission required", bundle: .localization,
+              comment: "General pane permission status.")
+          )
+          .font(.system(size: 12, weight: .semibold))
+          Text(
+            String(
+              localized: "Welp can’t protect your chats without it.", bundle: .localization,
+              comment: "Settings sidebar, under the missing Accessibility permission.")
+          )
+          .font(.system(size: 11))
+          .foregroundStyle(Theme.secondaryText)
+        }
+        .fixedSize(horizontal: false, vertical: true)
+      }
+      Button {
+        model.openPermissionSettings()
+      } label: {
+        Text(
+          String(
+            localized: "Open Settings", bundle: .localization,
+            comment: "Button that opens System Settings › Accessibility.")
+        )
+        .frame(maxWidth: .infinity)
+      }
+      .primaryButtonStyle(tint: Theme.caution, compact: true)
+    }
+    .padding(10)
+    .glassSurface(in: RoundedRectangle(cornerRadius: Theme.smallRadius, style: .continuous))
   }
 }
 

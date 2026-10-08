@@ -1219,6 +1219,17 @@
         }
       }
     },
+    "Welp can’t protect your chats without it." : {
+      "comment" : "Settings sidebar, under the missing Accessibility permission.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welp bu izin olmadan sohbetlerini koruyamaz."
+          }
+        }
+      }
+    },
     "Welp closes and opens again in the new language. Protection pauses for a moment." : {
       "comment" : "Explanation of the restart needed for a new language.",
       "localizations" : {
