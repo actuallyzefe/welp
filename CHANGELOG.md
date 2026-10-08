@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Changed
+
+- The DMG opens on an install window: Welp next to the Applications folder, with an arrow
+  to drag it across.
+
 ## [1.0.0] - 2026-10-08
 
 The first release.

@@ -144,6 +144,9 @@ The workflow runs in the `release` environment and needs these secrets:
 | `NOTARY_ISSUER` | Issuer ID shown on the App Store Connect API keys page |
 | `SPARKLE_PRIVATE_KEY` | Sparkle's EdDSA private key, exported with `generate_keys -x` |
 
+The DMG's install window (background, icon positions) lives in `Support/DMG`; `make dmg`
+builds an unsigned one to check it.
+
 To release from your own Mac instead, store notarization credentials once with
 `xcrun notarytool store-credentials welp` and run `make release VERSION=1.0.0`.
 

@@ -1,4 +1,4 @@
-.PHONY: build test lint format strings check-strings screenshots app install run release diagnose clean
+.PHONY: build test lint format strings check-strings screenshots app dmg install run release diagnose clean
 
 CATALOG := Sources/WelpApp/Resources/Localizable.xcstrings
 PRO_CATALOG := $(wildcard ee/Sources/WelpProEdition/Resources/Localizable.xcstrings)
@@ -48,6 +48,11 @@ screenshots:
 
 app:
 	scripts/build-app.sh
+
+# The release DMG's install window, unsigned, to check a new background or layout.
+dmg: app
+	scripts/build-dmg.sh build/Welp.app Welp build/Welp-preview.dmg
+	open build/Welp-preview.dmg
 
 install: app
 	rm -rf /Applications/Welp.app

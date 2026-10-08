@@ -73,12 +73,7 @@ if [[ "${SKIP_NOTARIZE:-0}" != 1 ]]; then
 fi
 
 DMG="build/Welp-$VERSION.dmg"
-STAGING="$(mktemp -d)"
-trap 'rm -rf "$STAGING"' EXIT
-cp -R "$APP" "$STAGING/"
-ln -s /Applications "$STAGING/Applications"
-rm -f "$DMG"
-hdiutil create -volname "Welp $VERSION" -srcfolder "$STAGING" -fs HFS+ -format UDZO "$DMG"
+scripts/build-dmg.sh "$APP" "Welp $VERSION" "$DMG"
 codesign --force --timestamp --sign "$IDENTITY" "$DMG"
 
 if [[ "${SKIP_NOTARIZE:-0}" == 1 ]]; then
