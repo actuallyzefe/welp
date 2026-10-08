@@ -11,7 +11,7 @@
 # Release builds (scripts/release.sh) also set:
 #   UNIVERSAL=1        build for both Apple silicon and Intel
 #   VERSION=1.2.3      CFBundleShortVersionString
-#   BUILD_NUMBER=42    CFBundleVersion
+#   BUILD_NUMBER=42    CFBundleVersion (default: derived from the version, see below)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -83,9 +83,23 @@ fi
 if [[ -n "${VERSION:-}" ]]; then
   plutil -replace CFBundleShortVersionString -string "$VERSION" "$PLIST"
 fi
-if [[ -n "${BUILD_NUMBER:-}" ]]; then
-  plutil -replace CFBundleVersion -string "$BUILD_NUMBER" "$PLIST"
+# CFBundleVersion, which Sparkle compares to find newer versions: derived from the version
+# (1.2.3 → 1002003), so it always grows with it and every build of the same version, local or
+# released, has the same number. Otherwise a local build would be offered its own version.
+if [[ -z "${BUILD_NUMBER:-}" ]]; then
+  SHORT_VERSION="$(plutil -extract CFBundleShortVersionString raw "$PLIST")"
+  if [[ ! "$SHORT_VERSION" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+    echo "error: version must look like 1.2.3, got '$SHORT_VERSION'" >&2
+    exit 1
+  fi
+  MAJOR=$((10#${BASH_REMATCH[1]})) MINOR=$((10#${BASH_REMATCH[2]})) PATCH=$((10#${BASH_REMATCH[3]}))
+  if ((MINOR > 999 || PATCH > 999)); then
+    echo "error: minor and patch versions must be below 1000" >&2
+    exit 1
+  fi
+  BUILD_NUMBER=$((MAJOR * 1000000 + MINOR * 1000 + PATCH))
 fi
+plutil -replace CFBundleVersion -string "$BUILD_NUMBER" "$PLIST"
 
 # Developer ID first, whatever order the keychain lists them in: a build signed with another
 # identity loses the Accessibility permission granted to the previous one.

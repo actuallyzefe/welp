@@ -20,18 +20,12 @@ cd "$(dirname "$0")/.."
 
 VERSION="${1:?usage: scripts/release.sh <version> [build-number]}"
 VERSION="${VERSION#v}"
-if [[ ! "$VERSION" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   echo "error: version must look like 1.2.3, got '$VERSION'" >&2
   exit 1
 fi
-# CFBundleVersion, which Sparkle compares to find newer versions: derived from the version
-# (1.2.3 → 1002003), so it always grows with it and doesn't depend on the git history.
-MAJOR=$((10#${BASH_REMATCH[1]})) MINOR=$((10#${BASH_REMATCH[2]})) PATCH=$((10#${BASH_REMATCH[3]}))
-if ((MINOR > 999 || PATCH > 999)); then
-  echo "error: minor and patch versions must be below 1000" >&2
-  exit 1
-fi
-BUILD_NUMBER="${2:-$((MAJOR * 1000000 + MINOR * 1000 + PATCH))}"
+# CFBundleVersion; by default scripts/build-app.sh derives it from the version.
+BUILD_NUMBER="${2:-}"
 
 NOTES="docs/releases/$VERSION.md"
 if [[ ! -f "$NOTES" ]]; then
