@@ -16,7 +16,7 @@ struct PlanSection: View {
       case .free:
         LabeledContent {
           Button(String.getWelpPro) { NSWorkspace.shared.open(Links.buyPro) }
-            .primaryButtonStyle()
+            .primaryButtonStyle(tint: Color(nsColor: .systemBlue))
         } label: {
           SettingLabel(
             title: String(
