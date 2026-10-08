@@ -5,9 +5,8 @@
 <h1 align="center">Welp</h1>
 
 <p align="center">
-  <strong>Yanlış sohbete bir daha mesaj atma.</strong><br>
-  Seçtiğin sohbetlere mesaj göndermeden önce <em>“Emin misin?”</em> diye soran bir macOS menü
-  çubuğu uygulaması.
+  <strong>Patronunun bunu görmesine gerek yoktu.</strong><br>
+  Welp, yanlış sohbete göndermeden önce seni durdurur.
 </p>
 
 <p align="center"><a href="https://www.getwelp.io">getwelp.io</a> · <a href="README.md">English</a></p>

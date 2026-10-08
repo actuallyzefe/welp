@@ -5,9 +5,8 @@
 <h1 align="center">Welp</h1>
 
 <p align="center">
-  <strong>Never send a message to the wrong chat again.</strong><br>
-  A macOS menu bar app that asks <em>“Are you sure?”</em> before you send a message to the
-  chats you choose.
+  <strong>Your boss didn’t need to see that.</strong><br>
+  Welp stops you before you send to the wrong chat.
 </p>
 
 <p align="center">
