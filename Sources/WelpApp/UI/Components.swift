@@ -84,6 +84,9 @@ struct GuardBadge: View {
       .foregroundStyle(.secondary)
       .padding(.leading, 2)
     }
+    // Always at its full width: its window is sized to fit it, rounded to whole points, and
+    // the fraction lost to rounding would otherwise truncate the mode ("First mess…").
+    .fixedSize()
     .padding(.horizontal, 10)
     .frame(height: 24)
     .glassSurface(in: Capsule())
