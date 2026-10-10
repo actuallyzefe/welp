@@ -25,6 +25,7 @@ public final class SlackScreen: SendTargetScreen {
   /// - Parameter postReturnKey: Posts a Return key press the interceptor lets through.
   public init(postReturnKey: @escaping @MainActor (_ withCommand: Bool) -> Void) {
     self.postReturnKey = postReturnKey
+    AXElement.limitMessagingTimeout(to: Self.messagingTimeout)
     observeLaunches()
     exposeWebContent()
   }
@@ -68,8 +69,9 @@ public final class SlackScreen: SendTargetScreen {
     guard let app = runningApp, app.receivesKeys(routedTo: targetProcess) else { return nil }
     let root = applicationElement(app)
 
-    guard let focused = root.focusedElement else {
-      // Web content not exposed (yet): we cannot see where Return goes, so assume the worst.
+    guard let focused = root.focusedElement, focused.role != nil else {
+      // Web content not exposed (yet), or Slack too busy to answer, e.g. while it rebuilds its
+      // web content after an app switch: we cannot see where Return goes, so assume the worst.
       let context = SendContext(
         messenger: messenger, trigger: .returnKey, chat: nil, text: "", isEmpty: false)
       // Explicitly approved by the user; there is nothing to compare against.
@@ -153,18 +155,18 @@ public final class SlackScreen: SendTargetScreen {
   }
 
   /// The first message box in the window, wherever focus is. Replays still check its text.
+  /// Never searched for inside the event tap, so it may take a little longer.
   private func messageBox(in window: AXElement) -> (composer: AXElement, container: AXElement)? {
-    window.firstDescendant(maxNodes: 5_000) { isComposer($0) }.flatMap(messageBox(focused:))
+    window.firstDescendant(maxNodes: 5_000, within: .milliseconds(500)) { isComposer($0) }
+      .flatMap(messageBox(focused:))
   }
 
   /// The send button under `point` and the message box it sends.
   private func sendButton(at point: CGPoint)
     -> (button: AXElement, container: AXElement?, composer: AXElement?)?
   {
-    let systemWide = AXElement.systemWide
-    systemWide.setMessagingTimeout(seconds: Self.messagingTimeout)
     guard
-      let button = systemWide.element(at: point)?
+      let button = AXElement.systemWide.element(at: point)?
         .selfOrAncestor(maxDepth: 4, where: { $0.hasClass(Ids.sendButtonClass) })
     else { return nil }
     let container = button.selfOrAncestor(maxDepth: 8, where: isInputContainer)
@@ -237,7 +239,7 @@ public final class SlackScreen: SendTargetScreen {
     let root = applicationElement(app)
     let window = root.mainWindow
     let focused = root.focusedElement
-    let composer = window?.firstDescendant(maxNodes: 5_000) {
+    let composer = window?.firstDescendant(maxNodes: 5_000, within: .seconds(2)) {
       $0.hasClass(Ids.composerClass)
         && $0.selfOrAncestor(maxDepth: 8, where: isInputContainer) != nil
     }
@@ -261,9 +263,7 @@ public final class SlackScreen: SendTargetScreen {
 
   private func applicationElement(_ app: NSRunningApplication) -> AXElement {
     exposeWebContent()
-    let element = AXElement.application(app.processIdentifier)
-    element.setMessagingTimeout(seconds: Self.messagingTimeout)
-    return element
+    return AXElement.application(app.processIdentifier)
   }
 
   private func webArea(in window: AXElement) -> AXElement? {

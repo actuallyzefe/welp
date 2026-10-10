@@ -16,10 +16,16 @@ public final class WhatsAppScreen: SendTargetScreen {
   private static let textInputRoles: Set<String> = [kAXTextAreaRole, kAXTextFieldRole]
 
   private let postReturnKey: @MainActor () -> Void
+  /// The chat last named in the chat header. The media preview hides the header and opens
+  /// over this chat.
+  private var headerChat: ChatID?
+  /// How the open media preview's recipient chip named `headerChat` when Welp first saw it.
+  private var previewRecipient: ChatName?
 
   /// - Parameter postReturnKey: Posts a Return key press the interceptor lets through.
   public init(postReturnKey: @escaping @MainActor () -> Void) {
     self.postReturnKey = postReturnKey
+    AXElement.limitMessagingTimeout(to: Self.messagingTimeout)
   }
 
   public var isRunning: Bool { runningApp != nil }
@@ -35,7 +41,8 @@ public final class WhatsAppScreen: SendTargetScreen {
       return nil
     }
     return ConversationSnapshot(
-      messenger: messenger, chat: chat(in: window), composerFrame: composer(in: window)?.frame)
+      messenger: messenger, chat: chat(in: window, watching: true),
+      composerFrame: (composer(in: window) ?? captionField(in: window))?.frame)
   }
 
   // MARK: SendTargetScreen
@@ -49,12 +56,19 @@ public final class WhatsAppScreen: SendTargetScreen {
   }
 
   private func returnKeyTarget(to targetProcess: pid_t) -> SendTarget? {
-    guard let app = runningApp, app.receivesKeys(routedTo: targetProcess),
-      let input = applicationElement(app).focusedElement, isMessageInput(input)
-    else { return nil }
+    guard let app = runningApp, app.receivesKeys(routedTo: targetProcess) else { return nil }
+    let root = applicationElement(app)
 
+    // Right after an app switch WhatsApp may be too busy to say what has focus. Return still
+    // reaches it, so assume the worst rather than let it through.
+    guard let focused = root.focusedElement, focused.role != nil else {
+      return unknownReturnKeyTarget(in: app)
+    }
+    guard isMessageInput(focused) else { return nil }
+
+    let input = focused
     let window = input.window
-    let chat = window.flatMap(chat(in:))
+    let chat = window.flatMap { self.chat(in: $0) }
     let text = input.value ?? ""
     let isMainComposer = input.identifier == Ids.composer
     let context = SendContext(
@@ -69,7 +83,7 @@ public final class WhatsAppScreen: SendTargetScreen {
       context: context,
       replay: { [weak self] in
         guard let self else { return .failed }
-        guard window.flatMap(self.chat(in:)) == chat else { return .targetChanged }
+        guard window.flatMap({ self.chat(in: $0) }) == chat else { return .targetChanged }
         // The main composer has a stable send button; anything else gets its Return back.
         if isMainComposer {
           guard window.flatMap(composer(in:))?.value == text else { return .targetChanged }
@@ -82,20 +96,33 @@ public final class WhatsAppScreen: SendTargetScreen {
     )
   }
 
+  /// Return while focus is unreadable: the chat is unknown and there is nothing to compare.
+  private func unknownReturnKeyTarget(in app: NSRunningApplication) -> SendTarget {
+    let context = SendContext(
+      messenger: messenger, trigger: .returnKey, chat: nil, text: "", isEmpty: false)
+    return SendTarget(
+      context: context,
+      // Explicitly approved by the user; there is nothing to compare against.
+      replay: { [weak self] in
+        self?.replayReturnKey()
+        return .sent
+      },
+      restoreFocus: { app.activate() }
+    )
+  }
+
   private func clickTarget(at point: CGPoint) -> SendTarget? {
     guard let app = runningApp,
       WindowOwnerLocator.ownerPID(at: point) == app.processIdentifier
     else { return nil }
 
-    let systemWide = AXElement.systemWide
-    systemWide.setMessagingTimeout(seconds: Self.messagingTimeout)
     guard
-      let button = systemWide.element(at: point)?
+      let button = AXElement.systemWide.element(at: point)?
         .selfOrAncestor(maxDepth: 4, where: isSendButton)
     else { return nil }
 
     let window = button.window
-    let chat = window.flatMap(chat(in:))
+    let chat = window.flatMap { self.chat(in: $0) }
     let isMainComposer = button.identifier == Ids.sendButton
     let context = SendContext(
       messenger: messenger,
@@ -108,7 +135,7 @@ public final class WhatsAppScreen: SendTargetScreen {
       context: context,
       replay: { [weak self] in
         guard let self else { return .failed }
-        guard window.flatMap(self.chat(in:)) == chat else { return .targetChanged }
+        guard window.flatMap({ self.chat(in: $0) }) == chat else { return .targetChanged }
         return button.press() ? .sent : .failed
       },
       restoreFocus: { app.activate() }
@@ -131,7 +158,7 @@ public final class WhatsAppScreen: SendTargetScreen {
     let isInput = focused.map(isMessageInput) ?? false
     return """
       WhatsApp (pid \(app.processIdentifier), frontmost: \(app.isActive ? "yes" : "no"))
-        Open chat: \(window.flatMap(chat(in:))?.description ?? "not detected")
+        Open chat: \(window.flatMap { chat(in: $0) }?.description ?? "not detected")
         Mesaj kutusu: \(describe(window.flatMap(composer(in:))))
         Send button: \(window.flatMap(mainSendButton(in:)) == nil ? "not found" : "found")
         Focused element: \(describe(focused)) → message box: \(isInput ? "yes" : "no")
@@ -145,29 +172,41 @@ public final class WhatsAppScreen: SendTargetScreen {
   }
 
   private func applicationElement(_ app: NSRunningApplication) -> AXElement {
-    let element = AXElement.application(app.processIdentifier)
-    element.setMessagingTimeout(seconds: Self.messagingTimeout)
-    return element
+    AXElement.application(app.processIdentifier)
   }
 
-  private func chat(in window: AXElement) -> ChatID? {
-    let title = window.firstDescendant { $0.identifier == Ids.chatTitle }
-    return ChatName((title ?? mediaRecipient(in: window))?.label)
-      .map { ChatID(messenger: messenger, name: $0) }
+  /// - Parameter watching: `true` from the regular look at the screen, which may note how a
+  ///   newly opened media preview names its chat; never from a send being decided.
+  private func chat(in window: AXElement, watching: Bool = false) -> ChatID? {
+    guard let title = window.firstDescendant(where: { $0.identifier == Ids.chatTitle }) else {
+      return mediaPreviewChat(in: window, watching: watching)
+    }
+    headerChat = ChatName(title.label).map { ChatID(messenger: messenger, name: $0) }
+    previewRecipient = nil
+    return headerChat
   }
 
-  /// The media preview's recipient, when it has exactly one: with several, no single chat is
-  /// the target, so the send is treated as going to an unknown chat.
-  private func mediaRecipient(in window: AXElement) -> AXElement? {
-    guard let recipient = window.firstDescendant(where: { $0.identifier == Ids.mediaRecipient }),
-      let recipients = recipient.parent?.children.filter({ $0.identifier == Ids.mediaRecipient }),
-      recipients.count == 1
+  /// The chat the media preview sends to. The preview opens over the chat in the header, but
+  /// its recipient chip doesn't always use that chat's name (your own chat is "You"). So the
+  /// chip's first name, seen within a moment of the preview opening and before any recipient
+  /// can be changed, stands for the header chat. Several recipients or a changed one are an
+  /// unknown chat, which is asked about.
+  private func mediaPreviewChat(in window: AXElement, watching: Bool) -> ChatID? {
+    guard let headerChat,
+      let chip = window.firstDescendant(where: { $0.identifier == Ids.mediaRecipient }),
+      let chips = chip.parent?.children.filter({ $0.identifier == Ids.mediaRecipient }),
+      chips.count == 1, let recipient = ChatName(chip.label)
     else { return nil }
-    return recipient
+    if watching, previewRecipient == nil { previewRecipient = recipient }
+    return recipient == headerChat.name || recipient == previewRecipient ? headerChat : nil
   }
 
   private func composer(in window: AXElement) -> AXElement? {
     window.firstDescendant { $0.identifier == Ids.composer }
+  }
+
+  private func captionField(in window: AXElement) -> AXElement? {
+    window.firstDescendant { $0.identifier == Ids.captionField }
   }
 
   private func mainSendButton(in window: AXElement) -> AXElement? {

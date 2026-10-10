@@ -9,9 +9,11 @@ enum WhatsAppIdentifiers {
 
   /// Header button of the open conversation; its label is the chat's name.
   static let chatTitle = "NavigationBar_HeaderViewButton"
-  /// A recipient of the media preview; its label is the chat's name. The preview is modal and
-  /// hides the header, so this is the only place it names the chat.
+  /// A recipient of the media preview. The preview is modal and hides the header; the chip's
+  /// label is usually the chat's name, but not always (your own chat is "You").
   static let mediaRecipient = "WAMultiSendBottomBarView_AudienceSelector_ContactChip"
+  /// Caption box of the media preview, where the badge goes while the preview is open.
+  static let captionField = "CaptionBar_TextView"
   /// The main message box.
   static let composer = "ChatBar_ComposerTextView"
   /// Send button next to the main message box.

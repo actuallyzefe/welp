@@ -86,8 +86,11 @@ sync with the chat you are in.
   is injected into them. In Slack, edits aren't guarded (an edit can't change where a
   message went) and the badge appears only while the message box is focused, to avoid
   scanning its large UI tree.
-- **Never block input.** Event tap work is bounded: Accessibility calls time out after
-  250 ms, tree searches are node-capped, and nothing is queried while no chat is guarded.
+- **Never block input.** Event tap work is bounded: every Accessibility call the process
+  makes times out after 250 ms (set globally: a timeout set on one element doesn't carry
+  over to its children), tree searches are capped in nodes and time, and nothing is
+  queried while no chat is guarded. When focus can't be read, Return is held and asked
+  about rather than let through.
 - **Text belongs to the app layer.** Domain modules return values (`SendNotice`,
   `SendAttempt`); `WelpApp` turns them into localized text from its String Catalog
   (`Resources/Localizable.xcstrings`, compiled by the `StringCatalogCompiler` plugin).
