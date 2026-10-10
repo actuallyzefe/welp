@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-10
+
 ### Added
 
 - A notice at the bottom of the settings sidebar while the Accessibility permission is
@@ -67,5 +69,6 @@ The first release.
 - Return presses are matched to the process that actually receives them, so launchers
   such as Raycast or Spotlight never trigger a prompt.
 
-[Unreleased]: https://github.com/actuallyzefe/welp/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/actuallyzefe/welp/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/actuallyzefe/welp/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/actuallyzefe/welp/releases/tag/v1.0.0
