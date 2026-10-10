@@ -64,7 +64,9 @@ public final class WhatsAppScreen: SendTargetScreen {
     guard let focused = root.focusedElement, focused.role != nil else {
       return unknownReturnKeyTarget(in: app)
     }
-    guard isMessageInput(focused) else { return nil }
+    guard isMessageInput(focused) else {
+      return mediaPreviewReturnKeyTarget(in: focused.window ?? root.mainWindow, app: app)
+    }
 
     let input = focused
     let window = input.window
@@ -106,6 +108,29 @@ public final class WhatsAppScreen: SendTargetScreen {
       replay: { [weak self] in
         self?.replayReturnKey()
         return .sent
+      },
+      restoreFocus: { app.activate() }
+    )
+  }
+
+  /// Return in the media preview while its caption box doesn't have focus, as right after an
+  /// image is pasted. Whether WhatsApp sends then isn't known, so the send is held anyway:
+  /// an extra question is better than a photo sent unchecked.
+  private func mediaPreviewReturnKeyTarget(in window: AXElement?, app: NSRunningApplication)
+    -> SendTarget?
+  {
+    guard let window, mediaSendButton(in: window) != nil else { return nil }
+    let chat = chat(in: window)
+    let context = SendContext(
+      messenger: messenger, trigger: .returnKey, chat: chat, text: "", isEmpty: false)
+    return SendTarget(
+      context: context,
+      replay: { [weak self] in
+        guard let self else { return .failed }
+        guard self.chat(in: window) == chat, let button = mediaSendButton(in: window) else {
+          return .targetChanged
+        }
+        return button.press() ? .sent : .failed
       },
       restoreFocus: { app.activate() }
     )
@@ -203,6 +228,10 @@ public final class WhatsAppScreen: SendTargetScreen {
 
   private func composer(in window: AXElement) -> AXElement? {
     window.firstDescendant { $0.identifier == Ids.composer }
+  }
+
+  private func mediaSendButton(in window: AXElement) -> AXElement? {
+    window.firstDescendant { $0.identifier == Ids.mediaSendButton }
   }
 
   private func captionField(in window: AXElement) -> AXElement? {
