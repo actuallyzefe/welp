@@ -27,6 +27,8 @@ All notable changes to this project are documented here. The format is based on
   unchecked when the preview named the chat differently from the chat list, e.g. "You" for
   your own chat. The preview now counts as the guarded chat it opened over, and Welp asks
   when it can't tell. The badge now shows above the preview's caption box too.
+- Return in WhatsApp's photo and file preview is also held when the caption box doesn't
+  have focus, as right after pasting an image.
 - When the Welp Pro license couldn't be written, Welp deleted the one it had, and you had
   to enter the key again. It now keeps it, and logs what happens to the license (never
   the key) so a lost one can be traced.
