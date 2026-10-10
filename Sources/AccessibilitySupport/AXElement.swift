@@ -64,13 +64,18 @@ public struct AXElement {
     return hit.map(AXElement.init)
   }
 
-  /// Breadth-first search, bounded so a huge UI can never stall an event tap.
-  public func firstDescendant(maxNodes: Int = 2_000, where matches: (AXElement) -> Bool)
-    -> AXElement?
-  {
+  /// Breadth-first search, bounded in nodes and in time so a huge or busy UI can never stall
+  /// an event tap: an app that answers each call just under the timeout would otherwise keep
+  /// a search of a few hundred nodes going for many seconds.
+  public func firstDescendant(
+    maxNodes: Int = 2_000, within budget: Duration = .milliseconds(250),
+    where matches: (AXElement) -> Bool
+  ) -> AXElement? {
+    let clock = ContinuousClock()
+    let deadline = clock.now + budget
     var queue = children
     var visited = 0
-    while !queue.isEmpty, visited < maxNodes {
+    while !queue.isEmpty, visited < maxNodes, clock.now < deadline {
       let next = queue.removeFirst()
       visited += 1
       if matches(next) { return next }
@@ -96,8 +101,15 @@ public struct AXElement {
     AXUIElementPerformAction(raw, kAXPressAction as CFString) == .success
   }
 
-  public func setMessagingTimeout(seconds: Float) {
-    AXUIElementSetMessagingTimeout(raw, seconds)
+  /// Bounds every Accessibility call this process makes, to any app.
+  ///
+  /// A timeout set on one element applies to that element only, not to the windows and
+  /// children read from it, so it has to be set for the whole process. Otherwise a messenger
+  /// busy redrawing after an app switch holds the main thread, where the event tap runs, for
+  /// the system default of several seconds; macOS then disables the tap and the held Return
+  /// reaches the messenger unchecked.
+  public static func limitMessagingTimeout(to seconds: Float) {
+    AXUIElementSetMessagingTimeout(AXUIElementCreateSystemWide(), seconds)
   }
 
   @discardableResult

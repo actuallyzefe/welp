@@ -19,6 +19,14 @@ All notable changes to this project are documented here. The format is based on
 ### Fixed
 
 - The badge above the message box no longer cuts the mode short ("First mess…").
+- A message could go out unchecked when you came back to WhatsApp or Slack from another
+  app: while the messenger was busy redrawing, Welp waited on it for seconds, and macOS
+  let Return through meanwhile. Welp now waits at most a quarter of a second and asks
+  when it can't tell where Return goes.
+- Photos and files sent from WhatsApp's preview (after dropping or attaching them) went out
+  unchecked when the preview named the chat differently from the chat list, e.g. "You" for
+  your own chat. The preview now counts as the guarded chat it opened over, and Welp asks
+  when it can't tell. The badge now shows above the preview's caption box too.
 
 ## [1.0.0] - 2026-10-08
 
